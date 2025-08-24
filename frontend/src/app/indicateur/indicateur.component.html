@@ -1,0 +1,28 @@
+<!-- components/crud-indicateur/crud-indicateur.component.html -->
+<div class="container">
+  <h2>Gestion des Indicateurs</h2>
+
+  <!-- 🔍 Barre de recherche -->
+  <input [(ngModel)]="searchTerm" placeholder="Rechercher par libellé" />
+  <button (click)="searchIndicateurs()">Rechercher</button>
+
+  <!-- 📝 Formulaire -->
+  <form (ngSubmit)="saveIndicateur()">
+    <input [(ngModel)]="selectedIndicateur.libelle" name="libelle" placeholder="Libellé" required />
+    <input [(ngModel)]="selectedIndicateur.objectif" name="objectif" placeholder="Objectif" required />
+    <input [(ngModel)]="selectedIndicateur.type" name="type" placeholder="Type" required />
+    <input [(ngModel)]="selectedIndicateur.seuilAttendu" name="seuilAttendu" type="number" placeholder="Seuil attendu" required />
+    <input [(ngModel)]="selectedIndicateur.uniteMesure" name="uniteMesure" placeholder="Unité de mesure" required />
+    <button type="submit">{{ selectedIndicateur.id ? 'Modifier' : 'Ajouter' }}</button>
+    <button type="button" (click)="selectedIndicateur = resetIndicateur()">Annuler</button>
+  </form>
+
+  <!-- 📋 Liste des indicateurs -->
+  <ul>
+    <li *ngFor="let indicateur of indicateurs">
+      {{ indicateur.libelle }} - {{ indicateur.objectif }} - {{ indicateur.type }}
+      <button (click)="editIndicateur(indicateur)">Modifier</button>
+      <button (click)="deleteIndicateur(indicateur.id!)">Supprimer</button>
+    </li>
+  </ul>
+</div>

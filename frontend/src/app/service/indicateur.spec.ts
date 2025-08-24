@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { CRUDutilisateur } from './crudutilisateur';
+import { Indicateur } from './indicateur';
 
-describe('CRUDutilisateur', () => {
-  let service: CRUDutilisateur;
+describe('Indicateur', () => {
+  let service: Indicateur;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(CRUDutilisateur);
+    service = TestBed.inject(Indicateur);
   });
 
   it('should be created', () => {

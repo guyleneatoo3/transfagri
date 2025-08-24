@@ -1,0 +1,56 @@
+/* Style du conteneur principal du formulaire de connexion */
+.login-container {
+  max-width: 400px; /* Largeur maximale du formulaire */
+  margin: 50px auto; /* Centrage vertical et horizontal */
+  padding: 20px; /* Espacement intérieur */
+  border: 1px solid #ccc; /* Bordure grise claire */
+  border-radius: 8px; /* Coins arrondis */
+  background-color: #f9f9f9; /* Fond légèrement gris */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Ombre douce pour effet de relief */
+}
+
+/* Style du titre du formulaire */
+.login-container h2 {
+  text-align: center; /* Centrage du texte */
+  margin-bottom: 20px; /* Espacement sous le titre */
+}
+
+/* Style des labels des champs */
+.login-container label {
+  display: block; /* Affichage en bloc pour occuper toute la largeur */
+  margin-bottom: 5px; /* Espacement sous le label */
+  font-weight: bold; /* Texte en gras */
+}
+
+/* Style des champs de saisie */
+.login-container input {
+  width: 100%; /* Champ prend toute la largeur disponible */
+  padding: 8px; /* Espacement intérieur */
+  margin-bottom: 15px; /* Espacement sous le champ */
+  border: 1px solid #aaa; /* Bordure grise moyenne */
+  border-radius: 4px; /* Coins légèrement arrondis */
+}
+
+/* Style du bouton de soumission */
+.login-container button {
+  width: 100%; /* Bouton prend toute la largeur */
+  padding: 10px; /* Espacement intérieur */
+  background-color: #007bff; /* Bleu vif */
+  color: white; /* Texte blanc */
+  border: none; /* Pas de bordure */
+  border-radius: 4px; /* Coins arrondis */
+  cursor: pointer; /* Curseur en forme de main */
+}
+
+/* Style du bouton lorsqu'il est désactivé */
+.login-container button:disabled {
+  background-color: #aaa; /* Gris pour indiquer l'inactivité */
+  cursor: not-allowed; /* Curseur interdit */
+}
+
+/* Style du message d'erreur */
+.error {
+  color: red; /* Texte rouge */
+  text-align: center; /* Centrage du texte */
+  margin-top: 10px; /* Espacement au-dessus du message */
+}

@@ -1,0 +1,30 @@
+<!-- Conteneur principal du formulaire de connexion -->
+<div class="login-container">
+  <!-- Titre du formulaire -->
+  <h2>Connexion</h2>
+
+  <!-- Formulaire réactif lié au FormGroup 'loginForm' -->
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    
+    <!-- Champ de saisie pour le login -->
+    <div>
+      <label for="login">Login</label>
+      <!-- Liaison du champ au contrôle 'login' du formulaire -->
+      <input id="login" formControlName="login" type="text" />
+    </div>
+
+    <!-- Champ de saisie pour le mot de passe -->
+    <div>
+      <label for="motDePasse">Mot de passe</label>
+      <!-- Liaison du champ au contrôle 'motDePasse' du formulaire -->
+      <input id="motDePasse" formControlName="motDePasse" type="password" />
+    </div>
+
+    <!-- Bouton de soumission du formulaire -->
+    <!-- Désactivé si le formulaire est invalide (ex : champs vides) -->
+    <button type="submit" [disabled]="loginForm.invalid">Se connecter</button>
+
+    <!-- Affichage du message d'erreur si 'errorMessage' est défini -->
+    <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
+  </form>
+</div>

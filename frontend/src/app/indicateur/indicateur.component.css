@@ -1,0 +1,80 @@
+/* 🧱 Conteneur principal */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f9f9f9; /* Couleur de fond douce */
+  border-radius: 8px;         /* Coins arrondis */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Ombre légère */
+}
+
+/* 🧾 Titre */
+h2 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* 🔍 Champ de recherche */
+input[type="text"],
+input[type="number"],
+input[type="search"] {
+  width: 100%;
+  padding: 8px;
+  margin: 6px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* 🧮 Formulaire */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* 🧵 Boutons */
+button {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* ✅ Bouton principal (ajouter/modifier) */
+button[type="submit"] {
+  background-color: #4CAF50;
+  color: white;
+}
+
+/* ❌ Bouton annuler */
+button[type="button"] {
+  background-color: #f44336;
+  color: white;
+}
+
+/* 📋 Liste des indicateurs */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* 🧾 Élément de la liste */
+li {
+  background-color: #fff;
+  margin-bottom: 8px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 🖊️ Boutons dans la liste */
+li button {
+  margin-left: 10px;
+  background-color: #2196F3;
+  color: white;
+}
