@@ -54,3 +54,18 @@
   text-align: center; /* Centrage du texte */
   margin-top: 10px; /* Espacement au-dessus du message */
 }
+
+/* Style du message d'information */
+.info-message {
+  background-color: #e7f3ff; /* Fond bleu clair */
+  border: 1px solid #b3d9ff; /* Bordure bleue */
+  border-radius: 4px; /* Coins arrondis */
+  padding: 10px; /* Espacement intérieur */
+  margin-bottom: 20px; /* Espacement sous le message */
+  text-align: center; /* Centrage du texte */
+  font-size: 14px; /* Taille de police plus petite */
+}
+
+.info-message p {
+  margin: 0; /* Supprime les marges par défaut du paragraphe */
+}

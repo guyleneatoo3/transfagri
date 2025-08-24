@@ -2,6 +2,13 @@
 <div class="login-container">
   <!-- Titre du formulaire -->
   <h2>Connexion</h2>
+  
+  <!-- Message d'aide pour les identifiants de test -->
+  <div class="info-message">
+    <p><strong>Mode développement:</strong><br>
+    Login: admin<br>
+    Mot de passe: admin</p>
+  </div>
 
   <!-- Formulaire réactif lié au FormGroup 'loginForm' -->
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">

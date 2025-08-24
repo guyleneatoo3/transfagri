@@ -1,16 +1,11 @@
-import { TestBed } from '@angular/core/testing';
+import { mergeApplicationConfig, ApplicationConfig } from '@angular/core';
+import { provideServerRendering } from '@angular/platform-server';
+import { appConfig } from './app.config';
 
-import { CRUDutilisateur } from './crudutilisateur';
+const serverConfig: ApplicationConfig = {
+  providers: [
+    provideServerRendering()
+  ]
+};
 
-describe('CRUDutilisateur', () => {
-  let service: CRUDutilisateur;
-
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(CRUDutilisateur);
-  });
-
-  it('should be created', () => {
-    expect(service).toBeTruthy();
-  });
-});
+export const config = mergeApplicationConfig(appConfig, serverConfig);

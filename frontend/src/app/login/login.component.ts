@@ -1,5 +1,6 @@
 // Importe les éléments nécessaires d'Angular
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 // Importe le service de connexion
 import { LoginService } from '../service/login';
@@ -25,8 +26,8 @@ export class LoginComponent {
   // Message d'erreur affiché en cas d'échec de connexion
   errorMessage: string = '';
 
-  // Constructeur avec injection du FormBuilder et du service LoginService
-  constructor(private fb: FormBuilder, private loginService: LoginService) {
+  // Constructeur avec injection du FormBuilder, du service LoginService et du Router
+  constructor(private fb: FormBuilder, private loginService: LoginService, private router: Router) {
     // Initialisation du formulaire avec deux champs requis : login et motDePasse
     this.loginForm = this.fb.group({
       login: ['', Validators.required],
@@ -43,7 +44,7 @@ export class LoginComponent {
         // En cas de succès
         next: (response) => {
           console.log('Connexion réussie !', response);
-          // Tu peux ajouter ici une redirection ou autre logique
+          this.router.navigate(['/dashboard']);
         },
         // En cas d'erreur
         error: (error) => {

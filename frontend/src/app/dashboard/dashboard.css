@@ -1,0 +1,56 @@
+.dashboard-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-container h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 30px;
+}
+
+.dashboard-actions {
+  background-color: white;
+  padding: 20px;
+  border-radius: 6px;
+  margin: 20px 0;
+  border: 1px solid #ddd;
+}
+
+.dashboard-actions h3 {
+  color: #007bff;
+  margin-bottom: 15px;
+}
+
+.dashboard-actions ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.dashboard-actions li {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.dashboard-actions li:last-child {
+  border-bottom: none;
+}
+
+.logout-btn {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-top: 20px;
+  float: right;
+}
+
+.logout-btn:hover {
+  background-color: #c82333;
+}
