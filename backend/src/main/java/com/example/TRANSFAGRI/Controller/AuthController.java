@@ -1,10 +1,12 @@
 package com.example.TRANSFAGRI.Service;
 
 import com.example.TRANSFAGRI.Model.Utilisateur;
-import com.example.TRANSFAGRI.Package.AuthResponse;
+import com.example.TRANSFAGRI.Payload.AuthResponse;
 import com.example.TRANSFAGRI.Repository.UtilisateurRepository;
-import org.springframework.security.crypto.password.PasswordEncoder;
+import com.example.TRANSFAGRI.Util.JwtUtil;
+
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -24,9 +26,9 @@ public class AuthService {
         }
 
         String token = jwtUtil.generateToken(utilisateur);
+
         return new AuthResponse(
                 token,
-                //utilisateur.getNom(),
                 utilisateur.getEmail(),
                 utilisateur.getRole().toString()
         );

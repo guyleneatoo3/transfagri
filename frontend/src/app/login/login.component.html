@@ -1,37 +1,39 @@
-<!-- Conteneur principal du formulaire de connexion -->
-<div class="login-container">
-  <!-- Titre du formulaire -->
-  <h2>Connexion</h2>
-  
-  <!-- Message d'aide pour les identifiants de test -->
-  <div class="info-message">
-    <p><strong>Mode développement:</strong><br>
-    Login: admin<br>
-    Mot de passe: admin</p>
-  </div>
-
-  <!-- Formulaire réactif lié au FormGroup 'loginForm' -->
-  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-    
-    <!-- Champ de saisie pour le login -->
-    <div>
-      <label for="login">Login</label>
-      <!-- Liaison du champ au contrôle 'login' du formulaire -->
-      <input id="login" formControlName="login" type="text" />
+<div class="main-container">
+  <nav>
+    <div class="nav-content">
+      <div style="display:flex;align-items:center;gap:12px;">
+    <a class="nav-logo" href="/accueil">TRANSFAGRI</a>
+      </div>
+      <div class="nav-links">
+        <a href="/accueil">Accueil</a>
+        <a href="/dashboard">Tableau de Bord</a>
+        <a href="/rapports">Rapports</a>
+        <a href="/apropos">À Propos</a>
+      </div>
+      <a href="/login" class="nav-btn">Connexion</a>
     </div>
-
-    <!-- Champ de saisie pour le mot de passe -->
-    <div>
-      <label for="motDePasse">Mot de passe</label>
-      <!-- Liaison du champ au contrôle 'motDePasse' du formulaire -->
-      <input id="motDePasse" formControlName="motDePasse" type="password" />
+  </nav>
+  <main style="display:flex;justify-content:center;align-items:center;min-height:80vh;">
+    <div style="background:#fff;padding:2rem 2.5rem;border-radius:1rem;box-shadow:0 2px 12px rgba(0,0,0,0.06);min-width:340px;">
+      <h2 style="color:#1a7f37;text-align:center;margin-bottom:1.5rem;">Connexion</h2>
+      <div class="info-message" style="background:#e7f3ff;border:1px solid #b3d9ff;border-radius:6px;padding:12px;margin-bottom:20px;font-size:14px;color:#0c365f;text-align:center;">
+        <p><strong>Mode développement:</strong><br>Login: admin<br>Mot de passe: admin</p>
+      </div>
+      <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+        <div style="margin-bottom:20px;">
+          <label for="login">Login</label>
+          <div style="display:flex;align-items:center;border:1px solid #cfd8dc;border-radius:6px;background:#f7fbff;padding:0 10px;">
+            <span style="font-size:18px;margin-right:8px;color:#607d8b;">👤</span>
+            <input id="login" formControlName="login" type="text" placeholder="Nom d'utilisateur" style="border:none;background:transparent;flex:1;padding:10px 0;" />
+          </div>
+        </div>
+        <div style="margin-bottom:20px;">
+          <label for="motDePasse">Mot de passe</label>
+          <input id="motDePasse" formControlName="motDePasse" type="password" style="width:100%;padding:10px;border:1px solid #cfd8dc;border-radius:6px;" />
+        </div>
+        <button type="submit" [disabled]="loginForm.invalid" class="nav-btn" style="width:100%;">Se connecter</button>
+        <p *ngIf="errorMessage" class="error" style="color:#b91c1c;text-align:center;margin-top:1rem;">{{ errorMessage }}</p>
+      </form>
     </div>
-
-    <!-- Bouton de soumission du formulaire -->
-    <!-- Désactivé si le formulaire est invalide (ex : champs vides) -->
-    <button type="submit" [disabled]="loginForm.invalid">Se connecter</button>
-
-    <!-- Affichage du message d'erreur si 'errorMessage' est défini -->
-    <p *ngIf="errorMessage" class="error">{{ errorMessage }}</p>
-  </form>
+  </main>
 </div>

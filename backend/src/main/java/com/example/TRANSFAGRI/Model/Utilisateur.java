@@ -5,30 +5,31 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-@Entity//pour génerer des tables
-@Data//
-@AllArgsConstructor//
-@NoArgsConstructor
-@Builder//
 
+@Entity
+@Data // génère automatiquement getters, setters, toString, equals, hashCode
+@AllArgsConstructor
+@NoArgsConstructor
+@Builder
 public class Utilisateur {
 
-        @Id
-        @GeneratedValue(strategy= GenerationType.IDENTITY)//l'identifiant est auto increment
-        private Integer id_utilisateur;
-        private String nom;
-        private String email;
-        private String motpass;
-        @Enumerated(EnumType.STRING)
-        @Column(nullable = false)
-        private Role role;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id_utilisateur;
 
-        public enum Role{
-            utilisateur,
-            superAdmin,
-            CNEF,
-            PASFNI,
-            EMF,
-        }
+    private String nom;
+    private String email;
+    private String motpass;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Role role;
+
+    public enum Role {
+        utilisateur,
+        superAdmin,
+        CNEF,
+        PASFNI,
+        EMF
     }
-
+}

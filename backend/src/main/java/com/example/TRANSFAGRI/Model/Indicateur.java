@@ -6,18 +6,18 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-@Entity//pour génerer des tables
-@Data//
-@AllArgsConstructor//
+@Entity
+@Data
+@AllArgsConstructor
 @NoArgsConstructor
-@Builder//
+@Builder
 public class Indicateur {
+
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)//l'identifiant est auto increment
-    private Integer idIndicateur;
-    private String libele;
-    private String objectif;
-    private String type;
-    private String seuiAttendu;
-    private String uniteMesure;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
+
+    private String nom;
+
+    private String description;
 }

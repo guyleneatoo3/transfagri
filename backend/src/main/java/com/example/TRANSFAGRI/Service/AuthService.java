@@ -1,9 +1,9 @@
 package com.example.TRANSFAGRI.Service;
 
 import com.example.TRANSFAGRI.Model.Utilisateur;
-import com.example.TRANSFAGRI.Payload.AuthResponse;
+import com.example.TRANSFAGRI.Package.AuthResponse;
 import com.example.TRANSFAGRI.Repository.UtilisateurRepository;
-import com.example.TRANSFAGRI.Util.JwtUtil;
+import com.example.TRANSFAGRI.Configuration.JwtUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -24,14 +24,12 @@ public class AuthService {
             throw new RuntimeException("Mot de passe incorrect");
         }
 
-        // Générer le token avec l'email comme identifiant
         String token = jwtUtil.generateToken(utilisateur.getEmail());
 
-        return new AuthResponse(
-                token,
-                utilisateur.getNom(),
-                utilisateur.getEmail(),
-                utilisateur.getRole().toString()
-        );
+    return new AuthResponse(
+        token,
+        utilisateur.getEmail(),
+        utilisateur.getRole().toString()
+    );
     }
 }

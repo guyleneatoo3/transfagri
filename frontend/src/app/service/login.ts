@@ -42,7 +42,10 @@ export class LoginService {
   }
 
   isAuthenticated(): boolean {
-    return !!localStorage.getItem('authToken');
+    if (typeof window !== 'undefined' && window.localStorage) {
+      return !!localStorage.getItem('authToken');
+    }
+    return false;
   }
 
   getLoginStatus(): Observable<boolean> {

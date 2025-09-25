@@ -1,4 +1,4 @@
-package com.example.TRANSFAGRI;
+package com.example.transfagri;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

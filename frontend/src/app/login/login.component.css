@@ -1,71 +1,82 @@
-/* Style du conteneur principal du formulaire de connexion */
-.login-container {
-  max-width: 400px; /* Largeur maximale du formulaire */
-  margin: 50px auto; /* Centrage vertical et horizontal */
-  padding: 20px; /* Espacement intérieur */
-  border: 1px solid #ccc; /* Bordure grise claire */
-  border-radius: 8px; /* Coins arrondis */
-  background-color: #f9f9f9; /* Fond légèrement gris */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Ombre douce pour effet de relief */
+@import '../haccueil/haccueil.css';
+/* No stray closing brace */
+
+.input-with-icon input {
+  flex: 1;
+  padding: 10px 8px;
+  border: none;
+  background: transparent;
+  font-size: 15px;
 }
 
-/* Style du titre du formulaire */
-.login-container h2 {
-  text-align: center; /* Centrage du texte */
-  margin-bottom: 20px; /* Espacement sous le titre */
+.input-with-icon input:focus {
+  outline: none;
 }
 
-/* Style des labels des champs */
+/* Label */
 .login-container label {
-  display: block; /* Affichage en bloc pour occuper toute la largeur */
-  margin-bottom: 5px; /* Espacement sous le label */
-  font-weight: bold; /* Texte en gras */
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+  font-size: 15px;
 }
 
-/* Style des champs de saisie */
-.login-container input {
-  width: 100%; /* Champ prend toute la largeur disponible */
-  padding: 8px; /* Espacement intérieur */
-  margin-bottom: 15px; /* Espacement sous le champ */
-  border: 1px solid #aaa; /* Bordure grise moyenne */
-  border-radius: 4px; /* Coins légèrement arrondis */
+/* Champ sans icône (mot de passe) */
+.login-container input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #cfd8dc;
+  border-radius: 6px;
+  background-color: #f7fbff;
+  margin-bottom: 20px;
+  font-size: 15px;
 }
 
-/* Style du bouton de soumission */
+.login-container input[type="password"]:focus {
+  outline: none;
+  border-color: #00b4d8;
+}
+
+/* Bouton */
 .login-container button {
-  width: 100%; /* Bouton prend toute la largeur */
-  padding: 10px; /* Espacement intérieur */
-  background-color: #007bff; /* Bleu vif */
-  color: white; /* Texte blanc */
-  border: none; /* Pas de bordure */
-  border-radius: 4px; /* Coins arrondis */
-  cursor: pointer; /* Curseur en forme de main */
+  width: 100%;
+  padding: 12px;
+  background-color: #0077b6;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-/* Style du bouton lorsqu'il est désactivé */
+.login-container button:hover {
+  background-color: #0096c7;
+}
+
 .login-container button:disabled {
-  background-color: #aaa; /* Gris pour indiquer l'inactivité */
-  cursor: not-allowed; /* Curseur interdit */
+  background-color: #aaa;
+  cursor: not-allowed;
 }
 
-/* Style du message d'erreur */
+/* Message d'erreur */
 .error {
-  color: red; /* Texte rouge */
-  text-align: center; /* Centrage du texte */
-  margin-top: 10px; /* Espacement au-dessus du message */
+  color: red;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
 }
 
-/* Style du message d'information */
-.info-message {
-  background-color: #e7f3ff; /* Fond bleu clair */
-  border: 1px solid #b3d9ff; /* Bordure bleue */
-  border-radius: 4px; /* Coins arrondis */
-  padding: 10px; /* Espacement intérieur */
-  margin-bottom: 20px; /* Espacement sous le message */
-  text-align: center; /* Centrage du texte */
-  font-size: 14px; /* Taille de police plus petite */
-}
+/* Responsive */
+@media (max-width: 480px) {
+  .login-container {
+    padding: 20px;
+    border-radius: 10px;
+  }
 
-.info-message p {
-  margin: 0; /* Supprime les marges par défaut du paragraphe */
+  .login-container h2 {
+    font-size: 1.5rem;
+  }
 }
